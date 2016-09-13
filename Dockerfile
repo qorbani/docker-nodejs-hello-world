@@ -1,1 +1,8 @@
-FROM node:6.5.0-onbuild
+FROM mhart/alpine-node
+
+WORKDIR /src
+ADD . .
+
+RUN npm install
+
+CMD [ "node", "app.js" ]
